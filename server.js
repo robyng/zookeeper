@@ -1,4 +1,5 @@
 const express = require('express');
+const PORT = process.env.PORT || 3002;
 const app = express();
 const { animals } = require('./data/animals.json')
 
@@ -38,6 +39,6 @@ app.get('/api/animals', (req, res) => {
     res.json(results);
 });
 
-app.listen(3002,() => {
-    console.log('API server now on port 3002 yeee!')
+app.listen(PORT,() => {
+    console.log(`API server now on port ${PORT} yeee!`)
 });
