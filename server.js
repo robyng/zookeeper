@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const PORT = process.env.PORT || 3002;
 const app = express();
+// middleware static resouces for css and others in public so we don't have to create endpoints for each file
+app.use(express.static('public'));
 // middle ware: parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 // middle ware cont: parse incoming JSON data 
@@ -72,6 +74,10 @@ app.get('/api/animals/:id', (req, res) => {
         res.send(404)
     }
 
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 // post routes

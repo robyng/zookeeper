@@ -172,6 +172,15 @@
         "hungry"
       ],
       "id": "16"
+    },
+    {
+      "name": "Pele",
+      "species": "Doggo",
+      "diet": "omnivore",
+      "personalityTraits": [
+        "goofy"
+      ],
+      "id": "17"
     }
   ]
 }
